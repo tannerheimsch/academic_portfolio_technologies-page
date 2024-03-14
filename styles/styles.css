@@ -104,3 +104,27 @@ code {
 .active .content::after {
     height: 0;
 }
+
+.project-link {
+    color: #ff0000;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.project-link:hover {
+    color: #ff4545;
+}
+
+.portfolio-link {
+    color: #000000;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.portfolio-link:hover {
+    color: rgb(255, 55, 55);
+    text-decoration: underline;
+}
