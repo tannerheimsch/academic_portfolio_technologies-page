@@ -1,14 +1,21 @@
-var coll = document.getElementsByClassName("collapsible");
-var i;
+const collapsibleButtons = document.querySelectorAll('.collapsible');
 
-for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-            content.style.maxHeight = null;
-        } else {
+collapsibleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        content.classList.toggle('active');
+
+        if (content.classList.contains('active')) {
             content.style.maxHeight = content.scrollHeight + "px";
+            content.addEventListener('transitionend', function() {
+                window.scrollBy({
+                    top: content.getBoundingClientRect().top,
+                    behavior: 'smooth'
+                });
+            }, { once: true });
+        } else {
+            content.style.maxHeight = null;
         }
     });
-}
+});
