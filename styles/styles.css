@@ -82,6 +82,7 @@ code {
     border-left: 3px solid #ff6666;
     border-right: 3px solid #ff6666;
     padding-left: 10px;
+    padding-right: 10px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
